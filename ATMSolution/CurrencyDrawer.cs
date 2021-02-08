@@ -20,6 +20,16 @@ namespace ATMSolution
             this.Quantity = quantity;
         }
 
+        internal void AddCurrency(int count)
+        {
+            Quantity += count;
+        }
+
+        internal void RemoveCurrency(int count)
+        {
+            Quantity -= count;
+        }
+
         public override string ToString()
         {
             return $"${CurrencyValue} - {Quantity}";

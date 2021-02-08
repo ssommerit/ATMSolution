@@ -16,7 +16,7 @@ namespace ATMSolution
         {
             foreach(string info in denomonationInfo)
             {
-                Console.WriteLine(info);
+                PrintMessage(info);
             }
         }
 
@@ -34,7 +34,11 @@ namespace ATMSolution
 
         internal static void PrintMessage(string message)
         {
-            Console.WriteLine(message);
+            if (!String.IsNullOrWhiteSpace(message))
+            {
+                Console.WriteLine(message);
+            }
+            
         }
     }
 }

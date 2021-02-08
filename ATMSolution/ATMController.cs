@@ -19,6 +19,10 @@ namespace ATMSolution
 
                 switch (Command)
                 {
+                    case 'W':
+                        // request withdrawl case
+                        RequestWithdrawal(Args);
+                        break;
                     case 'I':
                         // print inventory by denomonation
                         ATMIO.PrintDenomonationInfo(_cashDispenser.GetDenomonationInventory(Args));
@@ -30,6 +34,16 @@ namespace ATMSolution
                         ATMIO.PrintMessage("Failure: Invalid Command");
                         break;
                 }
+            }
+        }
+
+        private void RequestWithdrawal(string args)
+        {
+            (bool canWithdraw, string message) = _cashDispenser.WithdrawalFunds(args);
+            ATMIO.PrintMessage(message);
+            if (canWithdraw)
+            {
+                ATMIO.PrintDenomonationInfo(_cashDispenser.GetDispenserInventory());
             }
         }
     }
