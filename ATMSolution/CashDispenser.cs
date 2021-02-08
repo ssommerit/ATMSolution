@@ -24,7 +24,7 @@ namespace ATMSolution
         #region Withdrawal Logic
         // method for main withdrawl logic
         // returns a tuple(bool, string) indicating if the withdrawal was successful and a corresponding message
-        internal (bool, string) WithdrawalFunds(string requestedAmount)
+        public (bool, string) WithdrawalFunds(string requestedAmount)
         {
             string message;
             (bool canWithdraw, List<KeyValuePair<string, CurrencyDrawer>> dispenserDrawers) = TryWithdrawal(requestedAmount);
@@ -120,7 +120,7 @@ namespace ATMSolution
 
         #region Inventory Methods
         // Gets quantity from all currencyDrawers in the ATM
-        internal List<string> GetDispenserInventory()
+        public List<string> GetDispenserInventory()
         {
             List<string> dispenserInventory = new List<string>();
 
@@ -133,7 +133,7 @@ namespace ATMSolution
         }
 
         // Gets quantity from specified currency drawers 
-        internal List<string> GetDenomonationInventory(string keys)
+        public List<string> GetDenomonationInventory(string keys)
         {
             string[] denomonations = keys.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
             List<string> denomonationInventory = new List<string>();
@@ -164,7 +164,7 @@ namespace ATMSolution
         #endregion
 
         #region Restock logic
-        internal void RestockCurrency()
+        public void RestockCurrency()
         {
             foreach(KeyValuePair<string, CurrencyDrawer> drawer in _currencyDrawers)
             {

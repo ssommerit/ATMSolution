@@ -12,7 +12,7 @@ namespace ATMSolution
     /// </summary>
     internal static class ATMIO
     {
-        internal static void PrintDenomonationInfo(List<string> denomonationInfo)
+        public static void PrintDenomonationInfo(List<string> denomonationInfo)
         {
             foreach(string info in denomonationInfo)
             {
@@ -23,7 +23,7 @@ namespace ATMSolution
         /// <returns>
         /// A tuple of (char, string) representing the requested command and any passed arguments
         /// </returns>
-        internal static (char, string) ParseInput(string input)
+        public static (char, string) ParseInput(string input)
         {
             char cmd = string.IsNullOrWhiteSpace(input) ? ' ' : Char.ToUpper(input[0]);
             string args = input.Any(x => Char.IsWhiteSpace(x)) ? input.Split(new char[] { ' ', '\t' }, 2)[1] : string.Empty;
@@ -32,7 +32,7 @@ namespace ATMSolution
             return parsed;
         }
 
-        internal static void PrintMessage(string message)
+        public static void PrintMessage(string message)
         {
             if (!String.IsNullOrWhiteSpace(message))
             {

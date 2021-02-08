@@ -11,7 +11,7 @@ namespace ATMSolution
     {
         private readonly CashDispenser _cashDispenser = new CashDispenser();
 
-        internal void Run()
+        public void Run()
         {
             while (true)
             {

@@ -20,17 +20,17 @@ namespace ATMSolution
             this.Quantity = quantity;
         }
 
-        internal void AddCurrency(int count)
+        public void AddCurrency(int count)
         {
             Quantity += count;
         }
 
-        internal void RemoveCurrency(int count)
+        public void RemoveCurrency(int count)
         {
             Quantity -= count;
         }
 
-        internal void Restock(int quantity)
+        public void Restock(int quantity)
         {
             Quantity = quantity;
         }
