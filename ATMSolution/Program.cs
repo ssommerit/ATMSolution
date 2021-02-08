@@ -6,7 +6,8 @@ namespace ATMSolution
     {
         static void Main()
         {
-            
+            ATMController controller = new ATMController();
+            controller.Run();
         }
     }
 }
