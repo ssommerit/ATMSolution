@@ -12,10 +12,14 @@ namespace ATMSolution
     /// </summary>
     internal static class ATMIO
     {
-        /// <summary>
-        /// Parses the input string into a tuple
-        /// </summary>
-        /// <param name="input">A string.</param>
+        internal static void PrintDenomonationInfo(List<string> denomonationInfo)
+        {
+            foreach(string info in denomonationInfo)
+            {
+                Console.WriteLine(info);
+            }
+        }
+
         /// <returns>
         /// A tuple of (char, string) representing the requested command and any passed arguments
         /// </returns>

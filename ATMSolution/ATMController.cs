@@ -9,15 +9,20 @@ namespace ATMSolution
     /// </summary>
     internal class ATMController
     {
+        private readonly CashDispenser _cashDispenser = new CashDispenser();
 
         internal void Run()
         {
             while (true)
             {
-                (char Command, string args) = ATMIO.ParseInput(Console.ReadLine().Trim());
+                (char Command, string Args) = ATMIO.ParseInput(Console.ReadLine().Trim());
 
                 switch (Command)
                 {
+                    case 'I':
+                        // print inventory by denomonation
+                        ATMIO.PrintDenomonationInfo(_cashDispenser.GetDenomonationInventory(Args));
+                        break;
                     case 'Q':
                         Environment.Exit(0);
                         break;
