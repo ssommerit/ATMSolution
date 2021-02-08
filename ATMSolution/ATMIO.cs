@@ -7,7 +7,7 @@ namespace ATMSolution
 {
     /// <summary>
     /// This class handles input and output in the Console
-    /// Contains all methods for outputting informatin to the console
+    /// Contains all methods for outputting information to the console
     /// Handles string parsing of console input
     /// </summary>
     internal static class ATMIO
