@@ -162,5 +162,15 @@ namespace ATMSolution
             return denomonationInfo;
         }
         #endregion
+
+        #region Restock logic
+        internal void RestockCurrency()
+        {
+            foreach(KeyValuePair<string, CurrencyDrawer> drawer in _currencyDrawers)
+            {
+                drawer.Value.Restock(_maxCurrencyStock);
+            }
+        }
+        #endregion
     }
 }

@@ -19,6 +19,10 @@ namespace ATMSolution
 
                 switch (Command)
                 {
+                    case 'R':
+                        // restock case
+                        RequestRestock();
+                        break;
                     case 'W':
                         // request withdrawl case
                         RequestWithdrawal(Args);
@@ -43,8 +47,16 @@ namespace ATMSolution
             ATMIO.PrintMessage(message);
             if (canWithdraw)
             {
+                ATMIO.PrintMessage("Machine balance:");
                 ATMIO.PrintDenomonationInfo(_cashDispenser.GetDispenserInventory());
             }
+        }
+
+        private void RequestRestock()
+        {
+            _cashDispenser.RestockCurrency();
+            ATMIO.PrintMessage("Machine balance:");
+            ATMIO.PrintDenomonationInfo(_cashDispenser.GetDispenserInventory());
         }
     }
 }

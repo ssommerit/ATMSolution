@@ -30,6 +30,11 @@ namespace ATMSolution
             Quantity -= count;
         }
 
+        internal void Restock(int quantity)
+        {
+            Quantity = quantity;
+        }
+
         public override string ToString()
         {
             return $"${CurrencyValue} - {Quantity}";
